@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Game</title>
+<style>
+h1
+{
+text-align:center;
+color:yellow;
+background-color:green;
+font-size:80px;
+font-weight:normal;
+text-transform: uppercase;
+text-shadow: 5px 5px 2px blue;
+border-color:black;
+border-style:solid;
+border-width:8px;
+}
+
+h2
+{
+text-align:center;
+color:yellow;
+
+font-size:30px;
+font-weight:normal;
+text-transform: uppercase;
+
+border-color:red;
+border-style:solid;
+border-width:0px;
+}
+.detail
+{border-style:groove;
+border-width:9px;
+background-color:orange;
+}
+
+.butt
+{  background-color: red;
+  border: solid;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.butt1{
+background-color: blue;
+  border: solid;
+  color: black;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;}
+
+
+.instructions
+{border-style:solid;
+border-width:8px;
+background-color:green;}
+</style>
+<script>
+function display()
+{ var a,b,c; 
+a=document.getElementById("first").value; 
+b=document.getElementById("second").value; 
+
+alert("Welcome to the Game " +a +" " + b); 
+c= a +" "+ b; 
+document.getElementById("answer").value= c; 
+
+} 
+</script>
+</head>
+<body background="back2.jpg">
+<h1 class="h1">MEMORY GAME</h1>
+<table align="center" class="detail">
+
+<tr><td>
+<label><b><font size="10" color="darkblue">First Name:</font></b></label></td><td><input type="text" border="10" Id="first" placeholder="first name"></td></tr>
+<tr><td><label ><b><font size="10" color="darkblue">Last Name:</font></b></label></td><td><input type="text" Id="second" placeholder="last name"></td></tr>
+
+
+
+<tr><td></td><td> <font size="10" color="darkblue"><button onclick="display()" class="butt1"><label><b>Submit</label></b></button></font></td></tr>
+<tr><td><label><b><font size="10" color="darkblue">Username:</font></b></label></td><td><input id="answer"><br></td></tr>
+<tr><td></td><td>
+<a href="Game.html" target="_blank">
+<button class="butt">Start Game</button>
+</a></td></tr>
+
+
+</table></br></br></br>
+<div class="instructions">
+<h2><u>Instructions</u></h2>
+<font size="4">
+<ul class="l5">
+<li>As you click on "Start Game" button a new page will open and the <b>Timer starts immediately.</b></li>
+<li>You need to find the match of images in <b>1 Min.</b></li>
+<li>Please fill your details to Play the Game.</li>
+<li>After <b>60 sec</b> You can continue your game your total time will be displayed in time taken.</li>
+<li>To start a new game you can click on <b>Play Again</b> or you can refresh the page.</li>
+<li>The total number of counts (how many times you turned your card) will also be displayed.</li> 
+</ul>
+</font>
+</div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Memory Game</title>
+<script>
+
+
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes <1 ? "0" + minutes : minutes;
+        seconds = seconds < 1 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+           alert("Sorry!! The Time is UP");
+          timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 1,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+</script>
+<style>
+
+
+ 
+body {
+    height: 100vh;
+    background-color: lightblue;
+    display: flex;
+}
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+blink {
+  -webkit-animation: 1s linear infinite condemned_blink_effect; /* for Safari 4.0 - 8.0 */
+  animation: 1s linear infinite condemned_blink_effect;
+}
+
+/* for Safari 4.0 - 8.0 */
+@-webkit-keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+
+
+.play
+{background-color: red;
+  border: solid;
+  color: black;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+.game {
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+border-style:solid;
+border-width:8px;
+background-color:red;
+
+}
+.box {border-style:solid;
+border-width:2px;
+background-color:pink;}
+
+
+.card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card:active {
+    transform: scale(.90);
+    transition: transform .1s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: purple;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+</style>
+
+    
+
+</head>
+
+<body background="back.png">
+
+<center>
+<blink><h1 align="center"><font align="center" color="Blue" size="6"><div>Timer:<span id="time">01:00</span> sec</div></font></h1></blink></br></br>
+</br></br></br></br></br>
+
+<font size="5" class="box"> 
+
+<label><b>Total Score:</b></label></td><td><input id="answer"></br></br></br></br>
+<label><b>Total Flips:</b></label></td><td><input id="flips"></br></br></br></br>
+<label><b>Time Taken:</b></label></td><td><input id="timo"></br></br></br></br>
+<button id="playagain" onClick="window.location.reload();" class="play"><b>Play again</b></button>
+</font>
+</center>
+
+
+
+<section class="game">
+
+
+    
+        <div class="card" data-framework="aurelia">
+            <img src="opt1.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+        </div>
+        <div class="card" data-framework="aurelia">
+            <img src="opt1.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+        </div>
+        <div class="card" data-framework="opt2">
+            <img src="opt2.jpg" class="front">
+            <img src="button.jpg"  class="back">
+        </div>
+        <div class="card" data-framework="opt2">
+            <img src="opt2.jpg" class="front">
+            <img src="button.jpg"  class="back">
+        </div>
+        <div class="card" data-framework="ember">
+            <img src="opt3.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+        </div>
+        <div class="card" data-framework="ember">
+            <img src="opt3.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+        </div>
+        <div class="card" data-framework="backbone">
+            <img src="opt4.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+        </div>
+        <div class="card" data-framework="backbone">
+            <img src="opt4.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+    </div>
+      <div class="card" data-framework="vue">
+            <img src="vue.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+    </div>
+       <div class="card" data-framework="vue">
+               <img src="vue.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+    </div>
+<div class="card" data-framework="backk">
+            <img src="backbone.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+    </div>
+<div class="card" data-framework="backk">
+            <img src="backbone.jpg"  class="front">
+            <img src="button.jpg"  class="back">
+    </div>
+
+    
+
+    
+</selection>
+
+    <script src="script.js"></script> 
+
+
+</body>
+
+</html>
